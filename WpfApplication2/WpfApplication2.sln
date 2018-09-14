@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication2.Code", "Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication2.Directory", "WpfApplication2.Directory\WpfApplication2.Directory.csproj", "{2D8CC1A7-8857-48CC-928C-64E361073ED2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication2.LoadManual", "WpfApplication2.LoadManual\WpfApplication2.LoadManual.csproj", "{CBC9413D-C006-46EC-80E9-EDB2B2D6B9E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{2D8CC1A7-8857-48CC-928C-64E361073ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D8CC1A7-8857-48CC-928C-64E361073ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D8CC1A7-8857-48CC-928C-64E361073ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC9413D-C006-46EC-80E9-EDB2B2D6B9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC9413D-C006-46EC-80E9-EDB2B2D6B9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC9413D-C006-46EC-80E9-EDB2B2D6B9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC9413D-C006-46EC-80E9-EDB2B2D6B9E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
