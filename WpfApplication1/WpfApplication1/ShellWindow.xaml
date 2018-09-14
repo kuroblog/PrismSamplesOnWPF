@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:WpfApplication1"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         WindowStartupLocation="CenterScreen"
-        Title="example" Height="600" Width="800">
+        Title="{Binding Title}" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
