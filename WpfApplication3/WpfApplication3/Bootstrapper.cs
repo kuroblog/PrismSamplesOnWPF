@@ -1,14 +1,12 @@
 ﻿
 namespace WpfApplication3
 {
+    using CompositeCommands;
     using Microsoft.Practices.Unity;
+    using Prism.Modularity;
     using Prism.Unity;
-    //using UsingCompositeCommands.Views;
     using System.Windows;
     using Views;
-
-    //using Prism.Modularity;
-    //using UsingCompositeCommands.Core;
 
     class Bootstrapper : UnityBootstrapper
     {
@@ -22,17 +20,17 @@ namespace WpfApplication3
             Application.Current.MainWindow.Show();
         }
 
-        //protected override void ConfigureContainer()
-        //{
-        //    base.ConfigureContainer();
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
 
-        //    Container.RegisterType<IApplicationCommands, ApplicationCommands>(new ContainerControlledLifetimeManager());
-        //}
+            Container.RegisterType<IApplicationCommands, ApplicationCommands>(new ContainerControlledLifetimeManager());
+        }
 
-        //protected override void ConfigureModuleCatalog()
-        //{
-        //    var catalog = (ModuleCatalog)ModuleCatalog;
-        //    catalog.AddModule(typeof(ModuleA.ModuleAModule));
-        //}
+        protected override void ConfigureModuleCatalog()
+        {
+            var catalog = (ModuleCatalog)ModuleCatalog;
+            catalog.AddModule(typeof(ModuleA.ModuleAModule));
+        }
     }
 }

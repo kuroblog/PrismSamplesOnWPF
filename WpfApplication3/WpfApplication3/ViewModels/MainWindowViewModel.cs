@@ -1,6 +1,7 @@
 ﻿
 namespace WpfApplication3.ViewModels
 {
+    using CompositeCommands;
     using Prism.Mvvm;
     //using UsingCompositeCommands.Core;
 
@@ -13,21 +14,16 @@ namespace WpfApplication3.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel()
+        private IApplicationCommands _applicationCommands;
+        public IApplicationCommands ApplicationCommands
         {
-
+            get { return _applicationCommands; }
+            set { SetProperty(ref _applicationCommands, value); }
         }
 
-        //private IApplicationCommands _applicationCommands;
-        //public IApplicationCommands ApplicationCommands
-        //{
-        //    get { return _applicationCommands; }
-        //    set { SetProperty(ref _applicationCommands, value); }
-        //}
-
-        //public MainWindowViewModel(IApplicationCommands applicationCommands)
-        //{
-        //    ApplicationCommands = applicationCommands;
-        //}
+        public MainWindowViewModel(IApplicationCommands applicationCommands)
+        {
+            ApplicationCommands = applicationCommands;
+        }
     }
 }

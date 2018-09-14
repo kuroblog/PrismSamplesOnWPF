@@ -8,7 +8,19 @@
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Save" Margin="10" Command="{Binding ApplicationCommands.SaveCommand}"/>
+
+        <TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
     </Grid>
 </Window>
