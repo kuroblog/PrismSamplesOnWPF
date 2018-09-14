@@ -22,7 +22,7 @@ namespace WpfApplication1
 
         /// <summary>
         /// 使用 prism:ViewModelLocator.AutoWireViewModel="True" 的方法，必须遵循以下规则
-        /// ViewModel 的名称必须是 View + ViewModel
+        /// ViewModel 的名称必须是 View + ViewModel/View和ViewModel 最好安放到对应的目录 Views 和 ViewModels
         /// 比如：
         /// View：       ExampleView
         /// ViewModel：  ExampleViewViewModel
