@@ -8,6 +8,6 @@
              Background="White"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock Text="View A" FontSize="38" />
+        <TextBlock Text="View A" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
