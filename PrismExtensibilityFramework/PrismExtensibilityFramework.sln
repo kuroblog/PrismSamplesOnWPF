@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEF.Shell", "PEF.Shell\PEF.Shell.csproj", "{5FFC52D6-D868-41EE-A0C1-ADE00C442066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEF.Common", "PEF.Common\PEF.Common.csproj", "{F26693CA-0FD1-42C2-B936-81633A6AD372}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02174332-8E94-4D94-A984-BC0D8A597D6D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E94EDEA9-FB0A-438B-9B51-E1028FA75205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEF.Modules.TcpListener", "PEF.Modules.TcpListener\PEF.Modules.TcpListener.csproj", "{D09E86B7-1770-4177-BA0A-DDB7ED81594E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEF.Modules.TcpClient", "PEF.Modules.TcpClient\PEF.Modules.TcpClient.csproj", "{438C5B9D-542F-4927-9E4C-1FCABB16DBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEF.Modules.Main", "PEF.Modules.Main\PEF.Modules.Main.csproj", "{6C8F49AD-2921-4203-9C39-60DFE16298E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFC52D6-D868-41EE-A0C1-ADE00C442066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFC52D6-D868-41EE-A0C1-ADE00C442066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFC52D6-D868-41EE-A0C1-ADE00C442066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFC52D6-D868-41EE-A0C1-ADE00C442066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26693CA-0FD1-42C2-B936-81633A6AD372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26693CA-0FD1-42C2-B936-81633A6AD372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26693CA-0FD1-42C2-B936-81633A6AD372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26693CA-0FD1-42C2-B936-81633A6AD372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09E86B7-1770-4177-BA0A-DDB7ED81594E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09E86B7-1770-4177-BA0A-DDB7ED81594E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09E86B7-1770-4177-BA0A-DDB7ED81594E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09E86B7-1770-4177-BA0A-DDB7ED81594E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438C5B9D-542F-4927-9E4C-1FCABB16DBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438C5B9D-542F-4927-9E4C-1FCABB16DBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438C5B9D-542F-4927-9E4C-1FCABB16DBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438C5B9D-542F-4927-9E4C-1FCABB16DBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8F49AD-2921-4203-9C39-60DFE16298E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8F49AD-2921-4203-9C39-60DFE16298E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8F49AD-2921-4203-9C39-60DFE16298E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8F49AD-2921-4203-9C39-60DFE16298E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D09E86B7-1770-4177-BA0A-DDB7ED81594E} = {E94EDEA9-FB0A-438B-9B51-E1028FA75205}
+		{438C5B9D-542F-4927-9E4C-1FCABB16DBEB} = {E94EDEA9-FB0A-438B-9B51-E1028FA75205}
+		{6C8F49AD-2921-4203-9C39-60DFE16298E8} = {E94EDEA9-FB0A-438B-9B51-E1028FA75205}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE771BDD-206E-45AB-9E2F-958A47A8F24A}
+	EndGlobalSection
+EndGlobal
