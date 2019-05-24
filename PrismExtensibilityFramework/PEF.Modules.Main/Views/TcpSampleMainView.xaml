@@ -30,8 +30,8 @@
                 <Style TargetType="Button" BasedOn="{StaticResource CommandButton}"/>
             </StackPanel.Resources>
 
-            <Button Content="Listener" Margin="1" Command="{Binding NavigationCommand}" CommandParameter="{x:Static common:ViewNames.TcpListener}"/>
-            <Button Content="Client" Margin="1" Command="{Binding NavigationCommand}" CommandParameter="{x:Static common:ViewNames.TcpClient}"/>
+            <Button Content="Listener" Command="{Binding NavigationCommand}" CommandParameter="{x:Static common:ViewNames.TcpListener}"/>
+            <Button Content="Client" Command="{Binding NavigationCommand}" CommandParameter="{x:Static common:ViewNames.TcpClient}"/>
         </StackPanel>
         <Border Padding="5">
             <ContentControl prism:RegionManager.RegionName="{x:Static common:RegionNames.Content}"/>

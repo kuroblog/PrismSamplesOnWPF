@@ -3,6 +3,5 @@
     <Style TargetType="Button" x:Key="CommandButton">
         <Setter Property="MinWidth" Value="110"/>
         <Setter Property="Margin" Value="1"/>
-        <Setter Property="Padding" Value="1"/>
     </Style>
 </ResourceDictionary>
