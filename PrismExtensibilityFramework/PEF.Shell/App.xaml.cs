@@ -1,12 +1,14 @@
 ﻿
 namespace PEF.Shell
 {
+    using PEF.Common;
     using Prism.Ioc;
     using Prism.Modularity;
     using Prism.Mvvm;
     using Prism.Unity;
     using System;
     using System.Reflection;
+    using System.Threading.Tasks;
     using System.Windows;
 
     public partial class App : PrismApplication
@@ -17,7 +19,10 @@ namespace PEF.Shell
             return Container.Resolve<MainWindow>();
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry) { }
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterSingleton<ILogger, Logger>();
+        }
 
         protected override void ConfigureViewModelLocator()
         {
@@ -39,5 +44,25 @@ namespace PEF.Shell
             return new DirectoryModuleCatalog { ModulePath = @".\Modules" };
         }
         #endregion
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            DispatcherUnhandledException += (obj, err) =>
+            {
+                Console.WriteLine(err);
+            };
+
+            AppDomain.CurrentDomain.UnhandledException += (obj, err) =>
+            {
+                Console.WriteLine(err);
+            };
+
+            TaskScheduler.UnobservedTaskException += (obj, err) =>
+            {
+                Console.WriteLine(err);
+            };
+        }
     }
 }

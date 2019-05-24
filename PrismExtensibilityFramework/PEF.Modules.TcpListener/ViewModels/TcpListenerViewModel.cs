@@ -1,12 +1,20 @@
 ﻿
 namespace PEF.Modules.TcpListener.ViewModels
 {
+    using PEF.Common;
     using PEF.Modules.TcpListener.Models;
     using Prism.Commands;
     using Prism.Mvvm;
 
     public partial class TcpListenerViewModel : BindableBase
     {
+        private readonly ILogger logger;
+
+        public TcpListenerViewModel(ILogger logger)
+        {
+            this.logger = logger;
+        }
+
         private string title = "tcp listener";
 
         public string Title
@@ -25,6 +33,9 @@ namespace PEF.Modules.TcpListener.ViewModels
 
         public DelegateCommand<object> LoadedCommand => new DelegateCommand<object>(arg => { });
 
-        public DelegateCommand TcpListenerExecuteCommand => new DelegateCommand(() => { });
+        public DelegateCommand TcpListenerExecuteCommand => new DelegateCommand(() =>
+        {
+            logger.Dump(ListenerAddress);
+        });
     }
 }

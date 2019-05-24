@@ -23,7 +23,5 @@
             <prism:InvokeCommandAction Command="{Binding LoadedCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Grid>
-        <TextBlock Text="{Binding Title}"/>
-    </Grid>
+    <GroupBox Header="{Binding Title}"></GroupBox>
 </UserControl>

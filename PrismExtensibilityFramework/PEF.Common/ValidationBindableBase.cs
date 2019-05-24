@@ -16,6 +16,8 @@ namespace PEF.Common
         {
             get
             {
+                Error = null;
+
                 var pi = GetType().GetProperty(columnName);
                 var piValue = pi.GetValue(this, null);
                 var attributes = pi.GetCustomAttributes(false);
@@ -29,13 +31,13 @@ namespace PEF.Common
                             if (!vAttr.IsValid(piValue))
                             {
                                 Error = vAttr.ErrorMessage;
-                                return Error;
+                                break;
                             }
                         }
                     }
                 }
 
-                return null;
+                return Error;
             }
         }
         #endregion
