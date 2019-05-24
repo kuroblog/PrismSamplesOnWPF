@@ -14,6 +14,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/PEF.Common;component/Assets/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/PEF.Common;component/Assets/Styles/TextBlocks.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -24,7 +25,8 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding Title}" FontSize="20" Margin="5"/>
+        <TextBlock Style="{DynamicResource H2TextBlock}" DockPanel.Dock="Top" Text="{Binding Title}" Margin="5"/>
+
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5">
             <StackPanel.Resources>
                 <Style TargetType="Button" BasedOn="{StaticResource CommandButton}"/>
