@@ -14,6 +14,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/PEF.Common;component/Assets/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/PEF.Common;component/Assets/Styles/TextBlocks.xaml"/>
+                <ResourceDictionary Source="/PEF.Common;component/Assets/Styles/TextBoxes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -23,25 +25,26 @@
             <prism:InvokeCommandAction Command="{Binding LoadedCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <GroupBox Header="{Binding Title}">
+    <GroupBox Header="{Binding Title}" FontSize="{DynamicResource HeaderFontSize}">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5,1">
                 <StackPanel.Resources>
+                    <!--<Style TargetType="TextBlock" BasedOn="{StaticResource H2TextBlock}"/>-->
+
                     <Style TargetType="Button" BasedOn="{StaticResource CommandButton}"/>
 
-                    <Style TargetType="TextBox" x:Key="ValidationTextBox">
-                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Style TargetType="TextBox" x:Key="ValidationTextBox" BasedOn="{StaticResource H2TextBox}">
                         <Setter Property="Margin" Value="5,1"/>
                         <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
                     </Style>
                 </StackPanel.Resources>
 
-                <TextBlock Text="ip:" VerticalAlignment="Center"/>
+                <TextBlock Text="ip:" Style="{StaticResource H2TextBlock}"/>
 
                 <TextBox Style="{DynamicResource ValidationTextBox}" Width="120" x:Name="IpTextBox"
                      Text="{Binding ListenerAddress.Ip, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBlock Text="port:" VerticalAlignment="Center"/>
+                <TextBlock Text="port:" Style="{StaticResource H2TextBlock}"/>
 
                 <TextBox Style="{DynamicResource ValidationTextBox}" Width="50" x:Name="PortTextBox"
                      Text="{Binding ListenerAddress.Port, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>

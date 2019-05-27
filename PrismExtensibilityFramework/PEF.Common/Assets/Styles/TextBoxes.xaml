@@ -4,10 +4,9 @@
         <ResourceDictionary Source="Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="TextBlock" x:Key="H2TextBlock">
+    <Style TargetType="TextBox" x:Key="H2TextBox">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="1"/>
         <Setter Property="FontSize" Value="{DynamicResource HeaderFontSize}"/>
-        <Setter Property="MinWidth" Value="60"/>
     </Style>
 </ResourceDictionary>
