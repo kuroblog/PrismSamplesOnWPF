@@ -27,7 +27,10 @@ namespace Prism.Ex.App.Shell
         }
 
         // 必须重写
-        protected override void RegisterTypes(IContainerRegistry containerRegistry) { }
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterSingleton<ShellConfig>();
+        }
 
         private Action<object> WriteLog = (obj) => Console.WriteLine(obj);
 

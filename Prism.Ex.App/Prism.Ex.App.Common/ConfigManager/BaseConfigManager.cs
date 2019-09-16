@@ -8,7 +8,7 @@ namespace Prism.Ex.App.Common
 
     public abstract class BaseConfigManager : IConfigManager
     {
-        protected Configuration config = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
+        protected Configuration config { get; } = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
         {
             ExeConfigFilename = string.Concat(Assembly.GetCallingAssembly().Location, ".config")
         }, ConfigurationUserLevel.None);
@@ -44,5 +44,7 @@ namespace Prism.Ex.App.Common
         public virtual string ReadConnectionString(string key) => config.ConnectionStrings.ConnectionStrings[key].ConnectionString;
 
         public virtual string ReadAllText(string path) => File.ReadAllText(path);
+
+        public virtual string ModuleVersion => ReadAppSetting(nameof(ModuleVersion));
     }
 }

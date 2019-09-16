@@ -24,6 +24,7 @@ namespace Prism.Ex.App.Common.Tests
         public void SaveAppSettingTest()
         {
             var testKey = "TestSave";
+
             var testValue = Guid.NewGuid().ToString("N");
             tcm.SaveAppSetting(testKey, testValue);
 
@@ -35,6 +36,7 @@ namespace Prism.Ex.App.Common.Tests
         public void SaveAppSettingWhenNewKeyTest()
         {
             var testKey = Guid.NewGuid().ToString("N");
+
             tcm.SaveAppSetting(testKey, testKey);
 
             var res = tcm.ReadAppSetting(testKey);
@@ -68,6 +70,13 @@ namespace Prism.Ex.App.Common.Tests
             tcm.RemoveAppSetting(testKey);
 
             tcm.ReadAppSetting(testKey);
+        }
+
+        [TestMethod]
+        public void ModuleVersionTest()
+        {
+            var res = tcm.ModuleVersion;
+            Assert.AreEqual("1.0.0.9", res);
         }
     }
 }

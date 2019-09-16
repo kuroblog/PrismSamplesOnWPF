@@ -62,12 +62,18 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ConfigManager\ShellConfigTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Prism.Ex.App.Common\Prism.Ex.App.Common.csproj">
+      <Project>{3E631F22-DC0E-468E-890A-C93757C030D3}</Project>
+      <Name>Prism.Ex.App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism.Ex.App.Shell\Prism.Ex.App.Shell.csproj">
       <Project>{C8084BC1-D618-4B10-BA08-0B7255847FF1}</Project>
       <Name>Prism.Ex.App.Shell</Name>

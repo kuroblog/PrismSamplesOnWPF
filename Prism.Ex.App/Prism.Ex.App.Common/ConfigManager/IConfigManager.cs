@@ -12,5 +12,7 @@ namespace Prism.Ex.App.Common
         string ReadConnectionString(string key);
 
         string ReadAllText(string path);
+
+        string ModuleVersion { get; }
     }
 }
