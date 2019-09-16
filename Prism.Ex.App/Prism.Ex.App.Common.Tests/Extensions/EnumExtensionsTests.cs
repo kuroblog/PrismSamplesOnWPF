@@ -1,11 +1,10 @@
-﻿
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Diagnostics.CodeAnalysis;
+using SCM = System.ComponentModel;
+
 namespace Prism.Ex.App.Common.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using SCM = System.ComponentModel;
-
     [ExcludeFromCodeCoverage]
     [TestClass]
     public class EnumExtensionsTests

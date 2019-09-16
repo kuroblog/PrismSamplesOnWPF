@@ -5,6 +5,8 @@ namespace Prism.Ex.App.Common
     {
         string ReadAppSetting(string key);
 
+        void RemoveAppSetting(string key);
+
         void SaveAppSetting(string key, string value);
 
         string ReadConnectionString(string key);

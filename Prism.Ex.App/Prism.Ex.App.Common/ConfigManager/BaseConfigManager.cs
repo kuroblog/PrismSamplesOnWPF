@@ -8,18 +8,23 @@ namespace Prism.Ex.App.Common
 
     public abstract class BaseConfigManager : IConfigManager
     {
-        public virtual string ReadAppSetting(string key) => ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
+        protected Configuration config = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
         {
             ExeConfigFilename = string.Concat(Assembly.GetCallingAssembly().Location, ".config")
-        }, ConfigurationUserLevel.None).AppSettings.Settings[key].Value;
+        }, ConfigurationUserLevel.None);
+
+        public virtual string ReadAppSetting(string key) => config.AppSettings.Settings[key].Value;
+
+        public void RemoveAppSetting(string key)
+        {
+            if (config.AppSettings.Settings.AllKeys.Contains(key))
+            {
+                config.AppSettings.Settings.Remove(key);
+            }
+        }
 
         public virtual void SaveAppSetting(string key, string value)
         {
-            var config = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
-            {
-                ExeConfigFilename = string.Concat(Assembly.GetCallingAssembly().Location, ".config")
-            }, ConfigurationUserLevel.None);
-
             if (config.AppSettings.Settings.AllKeys.Contains(key))
             {
                 var result = config.AppSettings.Settings[key].Value;
@@ -36,10 +41,7 @@ namespace Prism.Ex.App.Common
             }
         }
 
-        public virtual string ReadConnectionString(string key) => ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
-        {
-            ExeConfigFilename = string.Concat(Assembly.GetCallingAssembly().Location, ".config")
-        }, ConfigurationUserLevel.None).ConnectionStrings.ConnectionStrings[key].ConnectionString;
+        public virtual string ReadConnectionString(string key) => config.ConnectionStrings.ConnectionStrings[key].ConnectionString;
 
         public virtual string ReadAllText(string path) => File.ReadAllText(path);
     }
