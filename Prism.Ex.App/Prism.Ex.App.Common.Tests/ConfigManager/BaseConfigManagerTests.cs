@@ -65,7 +65,7 @@ namespace Prism.Ex.App.Common.Tests
             var testKey = "TestRemove";
 
             var res = tcm.ReadAppSetting(testKey);
-            Assert.AreEqual("", res);
+            Assert.AreEqual("12333", res);
 
             tcm.RemoveAppSetting(testKey);
 

@@ -8,8 +8,19 @@ namespace Prism.Ex.App.Shell.ViewModels
     [ExcludeFromCodeCoverage]
     public class ShellViewModel : BindableBase
     {
-        public string Title { get; } = "Prism App Demo";
-
         public DelegateCommand<object> LoadedCommand => new DelegateCommand<object>(arg => { });
+
+        private readonly ShellConfig config;
+
+        public ShellViewModel(ShellConfig config)
+        {
+            this.config = config;
+        }
+
+        public string Title => config.ProductName;
+
+        public double Width => config.ShellWidth;
+
+        public double Height => config.ShellHeight;
     }
 }

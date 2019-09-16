@@ -7,9 +7,18 @@ namespace Prism.Ex.App.Shell.Tests
     [TestClass]
     public class ShellConfigTests
     {
-        private class TestShellConfig : ShellConfig { }
+        //private class TestShellConfig : ShellConfig { }
 
-        private readonly TestShellConfig tsc = new TestShellConfig();
+        //private readonly TestShellConfig tsc = new TestShellConfig();
+
+        private readonly ShellConfig tsc = new ShellConfig();
+
+        [TestMethod]
+        public void ProductNameTest()
+        {
+            var res = tsc.ProductName;
+            Assert.AreEqual("Prism Demo on WPF", res);
+        }
 
         [TestMethod]
         public void ShellWidthTest()
