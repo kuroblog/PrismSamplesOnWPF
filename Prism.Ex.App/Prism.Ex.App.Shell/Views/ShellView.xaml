@@ -9,6 +9,7 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common"
         WindowStartupLocation="CenterScreen"
         Title="{Binding Title,Mode=OneWay}" 
         Width="{Binding Width,Mode=OneWay}"
@@ -22,7 +23,9 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
-    <Grid>
-
-    </Grid>
+    <Border>
+        <ContentControl prism:RegionManager.RegionName="{x:Static com:RegionNames.Main}"
+                        VerticalContentAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"/>
+    </Border>
 </Window>
