@@ -82,8 +82,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigManager\BaseConfigManager.cs" />
     <Compile Include="Expressions\ExpressionSupport.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="ConfigManager\IConfigManager.cs" />
     <Compile Include="IoC\MainDispatcher.cs" />
     <Compile Include="Modularity\LimitedModuleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
