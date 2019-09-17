@@ -8,40 +8,40 @@ namespace Prism.Ex.App.Common
 
     public abstract class BaseConfigManager : IConfigManager
     {
-        protected Configuration config { get; } = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
+        protected Configuration Config { get; } = ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap
         {
             ExeConfigFilename = string.Concat(Assembly.GetCallingAssembly().Location, ".config")
         }, ConfigurationUserLevel.None);
 
-        public virtual string ReadAppSetting(string key) => config.AppSettings.Settings[key].Value;
+        public virtual string ReadAppSetting(string key) => Config.AppSettings.Settings[key].Value;
 
         public void RemoveAppSetting(string key)
         {
-            if (config.AppSettings.Settings.AllKeys.Contains(key))
+            if (Config.AppSettings.Settings.AllKeys.Contains(key))
             {
-                config.AppSettings.Settings.Remove(key);
+                Config.AppSettings.Settings.Remove(key);
             }
         }
 
         public virtual void SaveAppSetting(string key, string value)
         {
-            if (config.AppSettings.Settings.AllKeys.Contains(key))
+            if (Config.AppSettings.Settings.AllKeys.Contains(key))
             {
-                var result = config.AppSettings.Settings[key].Value;
+                var result = Config.AppSettings.Settings[key].Value;
                 if (result != value)
                 {
-                    config.AppSettings.Settings[key].Value = value;
-                    config.Save(ConfigurationSaveMode.Modified);
+                    Config.AppSettings.Settings[key].Value = value;
+                    Config.Save(ConfigurationSaveMode.Modified);
                 }
             }
             else
             {
-                config.AppSettings.Settings.Add(key, value);
-                config.Save(ConfigurationSaveMode.Modified);
+                Config.AppSettings.Settings.Add(key, value);
+                Config.Save(ConfigurationSaveMode.Modified);
             }
         }
 
-        public virtual string ReadConnectionString(string key) => config.ConnectionStrings.ConnectionStrings[key].ConnectionString;
+        public virtual string ReadConnectionString(string key) => Config.ConnectionStrings.ConnectionStrings[key].ConnectionString;
 
         public virtual string ReadAllText(string path) => File.ReadAllText(path);
 

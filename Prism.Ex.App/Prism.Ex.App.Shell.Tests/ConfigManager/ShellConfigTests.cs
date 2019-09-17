@@ -65,5 +65,12 @@ namespace Prism.Ex.App.Shell.Tests
 
             tsc.SaveAppSetting(testKey, testValue);
         }
+
+        [TestMethod]
+        public void ModuleDirectoryTest()
+        {
+            var res = tsc.ModuleDirectory;
+            Assert.AreEqual(@".\Modules", res);
+        }
     }
 }
