@@ -15,8 +15,8 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/Buttons.xaml"/>
-                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/TextBlocks.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/TextBlocks.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>

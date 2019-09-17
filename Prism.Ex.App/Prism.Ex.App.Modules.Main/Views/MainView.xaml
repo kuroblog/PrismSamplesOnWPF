@@ -15,7 +15,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/BusyIndicator.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/BusyIndicator.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary></UserControl.Resources>
 

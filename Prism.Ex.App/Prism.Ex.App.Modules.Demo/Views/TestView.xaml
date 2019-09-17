@@ -13,8 +13,8 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/Buttons.xaml"/>
-                <ResourceDictionary Source="/Prism.Ex.App.Modules.Demo;component/Resources/Strings.zh-cn.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Languages/zh-CN.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>

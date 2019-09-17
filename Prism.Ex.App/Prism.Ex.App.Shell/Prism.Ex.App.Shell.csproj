@@ -130,6 +130,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Prism.Ex.App.Asset\Prism.Ex.App.Asset.csproj">
+      <Project>{bd3824c6-297b-48c8-8baf-9e20d2427edf}</Project>
+      <Name>Prism.Ex.App.Asset</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism.Ex.App.Common\Prism.Ex.App.Common.csproj">
       <Project>{3e631f22-dc0e-468e-890a-c93757c030d3}</Project>
       <Name>Prism.Ex.App.Common</Name>
