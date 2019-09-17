@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12A362E5-5DB4-4BB6-9468-2FE261FC8B9E}</ProjectGuid>
+    <ProjectGuid>{F2EAB690-4054-4DD0-977B-97E88712D605}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Prism.Ex.App.Modules.Main.Tests</RootNamespace>
-    <AssemblyName>Prism.Ex.App.Modules.Main.Tests</AssemblyName>
+    <RootNamespace>Prism.Ex.App.Modules.Demo.Tests</RootNamespace>
+    <AssemblyName>Prism.Ex.App.Modules.Demo.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -69,9 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Prism.Ex.App.Modules.Main\Prism.Ex.App.Modules.Main.csproj">
-      <Project>{B01AB281-26E9-49AA-A79B-13900D022DBC}</Project>
-      <Name>Prism.Ex.App.Modules.Main</Name>
+    <ProjectReference Include="..\Prism.Ex.App.Modules.Demo\Prism.Ex.App.Modules.Demo.csproj">
+      <Project>{A02C8B25-B390-46B4-8E98-F36402742CE9}</Project>
+      <Name>Prism.Ex.App.Modules.Demo</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
