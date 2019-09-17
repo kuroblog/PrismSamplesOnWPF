@@ -86,6 +86,7 @@
     <Compile Include="Expressions\ExpressionSupport.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="ConfigManager\IConfigManager.cs" />
+    <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="IoC\MainDispatcher.cs" />
     <Compile Include="Modularity\LimitedModuleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
