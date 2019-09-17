@@ -31,7 +31,7 @@ namespace Prism.Ex.App.Shell
         {
             //return base.CreateModuleCatalog();
 
-            var modulePath = @".\Modules";
+            var modulePath = new ShellConfig().ModuleDirectory;
 
             //return new DirectoryModuleCatalog { ModulePath = modulePath };
 

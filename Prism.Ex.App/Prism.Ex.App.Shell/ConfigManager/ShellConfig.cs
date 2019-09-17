@@ -10,5 +10,7 @@ namespace Prism.Ex.App.Shell
         public double ShellWidth => double.TryParse(base.ReadAppSetting(nameof(ShellWidth)), out double width) ? width : 1280;
 
         public double ShellHeight => double.TryParse(ReadAppSetting(nameof(ShellHeight)), out double width) ? width : 960;
+
+        public string ModuleDirectory => ReadAppSetting(nameof(ModuleDirectory));
     }
 }
