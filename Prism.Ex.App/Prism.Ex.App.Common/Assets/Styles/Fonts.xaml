@@ -21,9 +21,9 @@
     <!-- 默认字体 -->
     <FontFamily x:Key="DefaultFont">NSimSun</FontFamily>
 
-    <ms:Double x:Key="SmallFontSize">9</ms:Double>
-    <ms:Double x:Key="NormalFontSize">11</ms:Double>
-    <ms:Double x:Key="LargeFontSize">14</ms:Double>
+    <ms:Double x:Key="SmallFontSize">11</ms:Double>
+    <ms:Double x:Key="NormalFontSize">14</ms:Double>
+    <ms:Double x:Key="LargeFontSize">16</ms:Double>
     <ms:Double x:Key="HeaderFontSize">18</ms:Double>
     <ms:Double x:Key="CaptionFontSize">22</ms:Double>
 

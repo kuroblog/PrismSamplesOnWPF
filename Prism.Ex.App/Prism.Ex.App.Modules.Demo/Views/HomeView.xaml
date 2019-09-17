@@ -9,7 +9,8 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common">
+             xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -31,7 +32,7 @@
             <Grid DockPanel.Dock="Top" Margin="10,1">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel.Resources>
-                        <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+                        <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                             <Setter Property="MinWidth" Value="90"/>
                             <Setter Property="Command" Value="{Binding ViewNavigationCommand}"/>
                             <Setter Property="CommandParameter" Value="{Binding Tag, RelativeSource={RelativeSource Mode=Self}}"/>

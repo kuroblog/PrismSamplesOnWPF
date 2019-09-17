@@ -10,4 +10,8 @@
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
         <Setter Property="Margin" Value="1"/>
     </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}" x:Key="DefaultButtonStyle">
+        <Setter Property="FontSize" Value="{StaticResource LargeFontSize}"/>
+    </Style>
 </ResourceDictionary>

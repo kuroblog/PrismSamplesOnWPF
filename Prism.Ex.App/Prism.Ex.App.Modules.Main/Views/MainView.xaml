@@ -9,9 +9,15 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common">
+             xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
-    <UserControl.Resources></UserControl.Resources>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/BusyIndicator.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary></UserControl.Resources>
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -19,9 +25,11 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
-    <Border>
-        <ContentControl prism:RegionManager.RegionName="{x:Static com:RegionNames.Home}"
-                        VerticalContentAlignment="Stretch"
-                        HorizontalContentAlignment="Stretch"/>
-    </Border>
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" Style="{StaticResource MainBusyIndicatorStyle}">
+        <Border>
+            <ContentControl prism:RegionManager.RegionName="{x:Static com:RegionNames.Home}"
+                            VerticalContentAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"/>
+        </Border>
+    </xctk:BusyIndicator>
 </UserControl>
