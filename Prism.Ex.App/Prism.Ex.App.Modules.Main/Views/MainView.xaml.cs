@@ -1,13 +1,13 @@
 ﻿
-namespace Prism.Ex.App.Shell
+namespace Prism.Ex.App.Modules.Main
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Windows;
+    using System.Windows.Controls;
 
     [ExcludeFromCodeCoverage]
-    public partial class ShellView : Window
+    public partial class MainView : UserControl
     {
-        public ShellView()
+        public MainView()
         {
             InitializeComponent();
         }

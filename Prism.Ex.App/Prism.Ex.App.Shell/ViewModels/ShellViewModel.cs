@@ -1,5 +1,5 @@
 ﻿
-namespace Prism.Ex.App.Shell.ViewModels
+namespace Prism.Ex.App.Shell
 {
     using Prism.Commands;
     using Prism.Mvvm;

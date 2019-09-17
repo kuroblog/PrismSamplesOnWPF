@@ -1,8 +1,9 @@
 ﻿
 namespace Prism.Ex.App.Shell
 {
-    using Prism.Ex.App.Shell.Views;
+    using Prism.Ex.App.Common;
     using Prism.Ioc;
+    using Prism.Modularity;
     using Prism.Unity;
     using System;
     using System.Diagnostics.CodeAnalysis;
@@ -24,6 +25,17 @@ namespace Prism.Ex.App.Shell
         protected override Window CreateShell()
         {
             return Container.Resolve<ShellView>();
+        }
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            //return base.CreateModuleCatalog();
+
+            var modulePath = @".\Modules";
+
+            //return new DirectoryModuleCatalog { ModulePath = modulePath };
+
+            return new LimitedModuleCatalog { ModulePath = modulePath };
         }
 
         // 必须重写

@@ -51,6 +51,8 @@ Null
 
     <span style="color:red">引用的包如果同时支持 .NETFramework 和 .NETStandard 就会出现这个问题</span>
 
+1. ```LimitedModuleCatalog``` 的模块路径需要修改成外部传入
+
 ### Chapter 2
 
 ---

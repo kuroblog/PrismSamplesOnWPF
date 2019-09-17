@@ -55,6 +55,7 @@ namespace Prism.Ex.App.Common
                         alreadyLoadedAssemblies.FirstOrDefault(assembly =>
                             string.Compare(Path.GetFileName(assembly.Location), file.Name, StringComparison.OrdinalIgnoreCase) == 0) == null);
 
+                // TODO: 配置路径修改为外部传入
                 var names = ConfigurationManager.AppSettings["ModuleNames"]?.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
                 foreach (FileInfo fileInfo in fileInfos)
