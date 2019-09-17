@@ -12,10 +12,12 @@
              xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common">
 
     <UserControl.Resources>
-        <Style TargetType="Button" x:Key="DefaultButtonStyle">
-            <Setter Property="Margin" Value="1"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/TextBlocks.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <i:Interaction.Triggers>
@@ -29,7 +31,8 @@
             <Grid DockPanel.Dock="Top" Margin="10,1">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel.Resources>
-                        <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+                        <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+                            <Setter Property="MinWidth" Value="90"/>
                             <Setter Property="Command" Value="{Binding ViewNavigationCommand}"/>
                             <Setter Property="CommandParameter" Value="{Binding Tag, RelativeSource={RelativeSource Mode=Self}}"/>
                         </Style>
@@ -42,10 +45,15 @@
             </Grid>
 
             <Grid DockPanel.Dock="Bottom" Margin="10,1">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource FootTextBlockStyle}"/>
+                </Grid.Resources>
+
                 <TextBlock HorizontalAlignment="Left">
                     <Run Text="Module:"/>
                     <Run Text="{Binding Title,Mode=OneWay}"/>
                 </TextBlock>
+
                 <TextBlock HorizontalAlignment="Right">
                     <Run Text="Ver."/>
                     <Run Text="{Binding Version,Mode=OneWay}"/>
@@ -53,8 +61,7 @@
             </Grid>
 
             <ContentControl prism:RegionManager.RegionName="{x:Static com:RegionNames.Content}"
-                            Margin="1"
-                            Padding="1"
+                            Margin="5"
                             VerticalContentAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"/>
         </DockPanel>
