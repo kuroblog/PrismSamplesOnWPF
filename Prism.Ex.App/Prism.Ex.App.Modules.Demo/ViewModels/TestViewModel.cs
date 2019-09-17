@@ -16,5 +16,17 @@ namespace Prism.Ex.App.Modules.Demo
         {
             this.config = config;
         }
+
+        public DelegateCommand<string> LanaguageSettingCommand => new DelegateCommand<string>(arg =>
+        {
+            switch (arg)
+            {
+                case "zh-cn":
+                    break;
+                case "en-us":
+                default:
+                    break;
+            }
+        });
     }
 }

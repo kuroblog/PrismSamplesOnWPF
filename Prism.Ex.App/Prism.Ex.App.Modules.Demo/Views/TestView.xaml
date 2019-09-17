@@ -10,7 +10,14 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
 
-    <UserControl.Resources></UserControl.Resources>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Prism.Ex.App.Common;component/Assets/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Modules.Demo;component/Resources/Strings.zh-cn.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -19,6 +26,25 @@
     </i:Interaction.Triggers>
 
     <Border>
-        <TextBlock Text="Test View" FontSize="60"/>
+        <Canvas>
+            <Button Content="中文" 
+                    Canvas.Left="10" 
+                    Canvas.Top="10" 
+                    Style="{StaticResource DefaultButtonStyle}" 
+                    Width="90"
+                    Command="{Binding LanaguageSettingCommand}"
+                    CommandParameter="zh-cn"/>
+            
+            <Button Content="English" 
+                    Canvas.Left="106" 
+                    Canvas.Top="11" 
+                    Style="{StaticResource DefaultButtonStyle}" 
+                    Width="90" 
+                    Margin="0"
+                    Command="{Binding LanaguageSettingCommand}"
+                    CommandParameter="en-us"/>
+
+            <TextBlock Text="{DynamicResource TestView}" FontSize="60" Canvas.Left="11" Canvas.Top="38"/>
+        </Canvas>
     </Border>
 </UserControl>

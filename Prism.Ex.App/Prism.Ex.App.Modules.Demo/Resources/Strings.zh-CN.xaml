@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ms="clr-namespace:System;assembly=mscorlib">
+
+    <ms:String x:Key="TestView">测试视图</ms:String>
+</ResourceDictionary>

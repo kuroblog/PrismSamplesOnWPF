@@ -69,6 +69,11 @@ namespace Prism.Ex.App.Shell
             }
         }
 
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+        }
+
         // UI 线程异常处理
         private void DispatcherUnhandledExceptionHandler(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
