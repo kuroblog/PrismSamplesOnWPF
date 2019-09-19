@@ -53,6 +53,16 @@ namespace Prism.Ex.App.Modules.Demo
                 case "Log":
                     region?.RequestNavigate(RegionNames.Content, typeof(LogView).FullName);
                     break;
+                case "ShowBusy":
+                    Task.Factory.StartNew(() =>
+                    {
+                        ea?.BusyIndicatorStateEventPublish(true);
+
+                        Task.Delay(3000).Wait();
+
+                        ea?.BusyIndicatorStateEventPublish(false);
+                    });
+                    break;
                 default:
                     break;
             }

@@ -53,6 +53,8 @@ Null
 
 1. ```LimitedModuleCatalog``` 的模块路径需要修改成外部传入
 
+1. 改善 BusyIndicator 控件的显示和调用方式
+
 ### Chapter 2
 
 ---

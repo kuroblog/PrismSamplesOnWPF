@@ -42,6 +42,8 @@
                     <Button Content="Default View" Tag="Default"/>
                     <Button Content="Test View" Tag="Test"/>
                     <Button Content="Log View" Tag="Log"/>
+
+                    <Button Content="Show BusyIndicator" Tag="ShowBusy"/>
                 </StackPanel>
             </Grid>
 
