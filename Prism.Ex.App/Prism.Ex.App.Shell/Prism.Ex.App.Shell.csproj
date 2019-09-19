@@ -138,6 +138,10 @@
       <Project>{3e631f22-dc0e-468e-890a-c93757c030d3}</Project>
       <Name>Prism.Ex.App.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Prism.Ex.App.Logger\Prism.Ex.App.Logger.csproj">
+      <Project>{074d72f3-e101-49c9-8c96-efda3e3d106c}</Project>
+      <Name>Prism.Ex.App.Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

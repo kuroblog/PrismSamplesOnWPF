@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25100D5E-33A9-43AB-A4F1-F62160D7B716}</ProjectGuid>
+    <ProjectGuid>{517FA5DE-B287-4479-ADBF-945BD9AD2DE1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Prism.Ex.App.Asset.Tests</RootNamespace>
-    <AssemblyName>Prism.Ex.App.Asset.Tests</AssemblyName>
+    <RootNamespace>Prism.Ex.App.Logger.Tests</RootNamespace>
+    <AssemblyName>Prism.Ex.App.Logger.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -69,9 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Prism.Ex.App.Asset\Prism.Ex.App.Asset.csproj">
-      <Project>{BD3824C6-297B-48C8-8BAF-9E20D2427EDF}</Project>
-      <Name>Prism.Ex.App.Asset</Name>
+    <ProjectReference Include="..\Prism.Ex.App.Logger\Prism.Ex.App.Logger.csproj">
+      <Project>{074D72F3-E101-49C9-8C96-EFDA3E3D106C}</Project>
+      <Name>Prism.Ex.App.Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
