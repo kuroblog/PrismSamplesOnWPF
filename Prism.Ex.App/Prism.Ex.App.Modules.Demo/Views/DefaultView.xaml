@@ -8,9 +8,15 @@
              d:DesignHeight="900"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:res="clr-namespace:Prism.Ex.App.Asset;assembly=Prism.Ex.App.Asset">
 
-    <UserControl.Resources></UserControl.Resources>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Languages/zh-CN.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary></UserControl.Resources>
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -18,7 +24,11 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
+    <i:Interaction.Behaviors>
+        <res:CleanLanguageForDesignTimeBehavior/>
+    </i:Interaction.Behaviors>
+
     <Border>
-        <TextBlock Text="Default View" FontSize="60"/>
+        <TextBlock Text="{DynamicResource DefaultView}" FontSize="60"/>
     </Border>
 </UserControl>

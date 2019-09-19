@@ -8,7 +8,8 @@
              d:DesignHeight="900"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:res="clr-namespace:Prism.Ex.App.Asset;assembly=Prism.Ex.App.Asset">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -25,6 +26,10 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
+    <i:Interaction.Behaviors>
+        <res:CleanLanguageForDesignTimeBehavior/>
+    </i:Interaction.Behaviors>
+
     <Border>
         <Canvas>
             <Button Content="中文" 
@@ -33,8 +38,8 @@
                     Style="{StaticResource DefaultButtonStyle}" 
                     Width="90"
                     Command="{Binding LanaguageSettingCommand}"
-                    CommandParameter="zh-cn"/>
-            
+                    CommandParameter="zh-CN"/>
+
             <Button Content="English" 
                     Canvas.Left="106" 
                     Canvas.Top="11" 
@@ -42,7 +47,7 @@
                     Width="90" 
                     Margin="0"
                     Command="{Binding LanaguageSettingCommand}"
-                    CommandParameter="en-us"/>
+                    CommandParameter="en-US"/>
 
             <TextBlock Text="{DynamicResource TestView}" FontSize="60" Canvas.Left="11" Canvas.Top="38"/>
         </Canvas>

@@ -31,11 +31,9 @@ namespace Prism.Ex.App.Shell
         {
             //return base.CreateModuleCatalog();
 
-            var modulePath = new ShellConfig().ModuleDirectory;
+            //return new DirectoryModuleCatalog { ModulePath = config.ModuleDirectory };
 
-            //return new DirectoryModuleCatalog { ModulePath = modulePath };
-
-            return new LimitedModuleCatalog { ModulePath = modulePath };
+            return new LimitedModuleCatalog { ModulePath = config.ModuleDirectory };
         }
 
         // 必须重写
@@ -45,6 +43,8 @@ namespace Prism.Ex.App.Shell
         }
 
         private Action<object> WriteLog = (obj) => Console.WriteLine(obj);
+
+        private readonly ShellConfig config = new ShellConfig();
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -60,6 +60,8 @@ namespace Prism.Ex.App.Shell
 
                 // 处理 Task 线程中抛出且没有处理的异常
                 TaskScheduler.UnobservedTaskException += TaskSchedulerUnobservedTaskExceptionHandler;
+
+                config.SetDisplayLanguage();
 
                 base.OnStartup(e);
             }

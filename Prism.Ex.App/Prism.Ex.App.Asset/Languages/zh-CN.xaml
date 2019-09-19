@@ -3,4 +3,5 @@
                     xmlns:ms="clr-namespace:System;assembly=mscorlib">
 
     <ms:String x:Key="TestView">测试视图</ms:String>
+    <ms:String x:Key="DefaultView">默认视图</ms:String>
 </ResourceDictionary>

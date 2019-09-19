@@ -3,7 +3,10 @@ namespace Prism.Ex.App.Modules.Demo
 {
     using Prism.Commands;
     using Prism.Mvvm;
+    using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using System.Windows;
 
     [ExcludeFromCodeCoverage]
     public class TestViewModel : BindableBase
@@ -19,14 +22,7 @@ namespace Prism.Ex.App.Modules.Demo
 
         public DelegateCommand<string> LanaguageSettingCommand => new DelegateCommand<string>(arg =>
         {
-            switch (arg)
-            {
-                case "zh-cn":
-                    break;
-                case "en-us":
-                default:
-                    break;
-            }
+            config.SetDisplayLanguage(arg);
         });
     }
 }

@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigManager\BaseConfigManager.cs" />
+    <Compile Include="Extensions\ConfigurationExtensions.cs" />
     <Compile Include="Expressions\ExpressionSupport.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="ConfigManager\IConfigManager.cs" />

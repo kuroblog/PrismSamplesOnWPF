@@ -33,14 +33,14 @@ namespace Prism.Ex.App.Modules.Demo
         {
             //ea?.BusyIndicatorStateEventPublish(true);
 
-            Task.Factory.StartNew(() =>
-            {
-                ea?.BusyIndicatorStateEventPublish(true);
+            //Task.Factory.StartNew(() =>
+            //{
+            //    ea?.BusyIndicatorStateEventPublish(true);
 
-                Task.Delay(3000).Wait();
+            //    Task.Delay(3000).Wait();
 
-                ea?.BusyIndicatorStateEventPublish(false);
-            });
+            //    ea?.BusyIndicatorStateEventPublish(false);
+            //});
 
             switch (arg)
             {
