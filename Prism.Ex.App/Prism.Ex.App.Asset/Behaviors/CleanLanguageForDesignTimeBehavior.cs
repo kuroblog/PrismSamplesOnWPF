@@ -10,8 +10,8 @@ namespace Prism.Ex.App.Asset
     {
         public string LanguageKey
         {
-            get { return (string)GetValue(MyPropertyProperty); }
-            set { SetValue(MyPropertyProperty, value); }
+            get => (string)GetValue(MyPropertyProperty);
+            set => SetValue(MyPropertyProperty, value);
         }
 
         public static readonly DependencyProperty MyPropertyProperty =

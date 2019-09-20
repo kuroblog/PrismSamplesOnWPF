@@ -51,6 +51,9 @@ namespace Prism.Ex.App.Modules.Demo
                 case "Default":
                     region?.RequestNavigate(RegionNames.Content, typeof(DefaultView).FullName);
                     break;
+                case "Command":
+                    region?.RequestNavigate(RegionNames.Content, typeof(CommandView).FullName);
+                    break;
                 case "Test":
                     region?.RequestNavigate(RegionNames.Content, typeof(TestView).FullName);
                     break;
@@ -73,6 +76,12 @@ namespace Prism.Ex.App.Modules.Demo
                 case "ErrorLog":
                     ErrorLog();
                     break;
+                case "Sync":
+                    SyncCommandHandler();
+                    break;
+                case "Async":
+                    AsyncCommandHandler();
+                    break;
                 default:
                     break;
             }
@@ -93,6 +102,44 @@ namespace Prism.Ex.App.Modules.Demo
             {
                 logger.Error(ex);
             }
+        }
+
+        private bool isEnable = true;
+
+        public bool IsEnable
+        {
+            get => isEnable;
+            set => SetProperty(ref isEnable, value);
+        }
+
+        public DelegateCommand<object> SyncCommand => new DelegateCommand<object>(p =>
+        {
+            IsEnable = false;
+
+            Task.Delay(3000).Wait();
+
+            IsEnable = true;
+        }).ObservesProperty(() => IsEnable);
+
+        private async void AsyncHnadler(object arg)
+        {
+            IsEnable = false;
+
+            await Task.Delay(3000);
+
+            IsEnable = true;
+        }
+
+        public DelegateCommand<object> AsyncCommand => new DelegateCommand<object>(AsyncHnadler).ObservesCanExecute(() => IsEnable);
+
+        private void SyncCommandHandler()
+        {
+
+        }
+
+        private void AsyncCommandHandler()
+        {
+
         }
     }
 }

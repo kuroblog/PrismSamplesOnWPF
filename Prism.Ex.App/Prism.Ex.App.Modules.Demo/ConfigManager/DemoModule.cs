@@ -27,9 +27,11 @@ namespace Prism.Ex.App.Modules.Demo
             ViewModelLocationProvider.Register<DefaultView, DefaultViewModel>();
             ViewModelLocationProvider.Register<TestView, TestViewModel>();
             ViewModelLocationProvider.Register<LogView, LogViewModel>();
+            ViewModelLocationProvider.Register<CommandView, CommandViewModel>();
 
             containerRegistry.RegisterForNavigation<TestView>(typeof(TestView).FullName);
             containerRegistry.RegisterForNavigation<LogView>(typeof(LogView).FullName);
+            containerRegistry.RegisterForNavigation<CommandView>(typeof(CommandView).FullName);
         }
 
         public DemoModule() { }

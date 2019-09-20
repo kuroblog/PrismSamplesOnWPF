@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Prism.Ex.App.Modules.Demo.CommandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="1280"
+             d:DesignHeight="900"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:res="clr-namespace:Prism.Ex.App.Asset;assembly=Prism.Ex.App.Asset">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/CheckBoxs.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/GroupBoxs.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/TextBoxs.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Languages/zh-CN.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <prism:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <i:Interaction.Behaviors>
+        <res:CleanLanguageForDesignTimeBehavior/>
+    </i:Interaction.Behaviors>
+
+    <Border>
+        <Canvas>
+
+            <Canvas.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+
+                <Style TargetType="CheckBox" BasedOn="{StaticResource DefaultCheckBoxStyle}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+
+                <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+
+                <Style TargetType="GroupBox" BasedOn="{StaticResource DefaultGroupBoxStyle}"/>
+            </Canvas.Resources>
+
+            <GroupBox Header="Using DelegateCommand" Canvas.Left="10" Canvas.Top="10">
+                <StackPanel>
+                    <CheckBox Content="Can Execute Command" IsChecked="{Binding IsEnabled,Mode=TwoWay}"/>
+
+                    <Button Content="DelegateCommand" Command="{Binding ExecuteDelegateCommand}"/>
+                    <Button Content="DelegateCommand ObservesProperty" Command="{Binding DelegateCommandObservesProperty}"/>
+                    <Button Content="DelegateCommand ObservesCanExecute" Command="{Binding DelegateCommandObservesCanExecute}"/>
+
+                    <TextBox x:Name="CommandParameterTextBox" IsEnabled="{Binding IsEnabled,Mode=OneWay}"/>
+
+                    <Button Content="DelegateCommand Generic" Command="{Binding ExecuteGenericDelegateCommand}" CommandParameter="{Binding ElementName=CommandParameterTextBox,Path=Text}"/>
+                </StackPanel>
+            </GroupBox>
+
+        </Canvas>
+    </Border>
+</UserControl>

@@ -40,12 +40,15 @@
                     </StackPanel.Resources>
 
                     <Button Content="Default View" Tag="Default"/>
+                    <Button Content="Command View" Tag="Command"/>
                     <Button Content="Test View" Tag="Test"/>
                     <Button Content="Log View" Tag="Log"/>
 
                     <Button Content="Show BusyIndicator" Tag="ShowBusy"/>
                     <Button Content="Test Log" Tag="TestLog"/>
                     <Button Content="Error Log" Tag="ErrorLog"/>
+                    <Button Content="Sync Command" Tag="Sync" Command="{Binding SyncCommand}"/>
+                    <Button Content="Async Command" Tag="Async" Command="{Binding AsyncCommand}"/>
                 </StackPanel>
             </Grid>
 
