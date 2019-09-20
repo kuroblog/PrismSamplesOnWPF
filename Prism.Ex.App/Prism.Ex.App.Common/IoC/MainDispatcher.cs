@@ -13,7 +13,7 @@ namespace Prism.Ex.App.Common
     {
         private static readonly Lazy<MainDispatcher> instance = new Lazy<MainDispatcher>(() => new MainDispatcher());
 
-        public static MainDispatcher Value => instance.Value;
+        public static MainDispatcher Instance => instance.Value;
 
         private MainDispatcher() { }
 

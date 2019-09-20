@@ -44,6 +44,8 @@
                     <Button Content="Log View" Tag="Log"/>
 
                     <Button Content="Show BusyIndicator" Tag="ShowBusy"/>
+                    <Button Content="Test Log" Tag="TestLog"/>
+                    <Button Content="Error Log" Tag="ErrorLog"/>
                 </StackPanel>
             </Grid>
 

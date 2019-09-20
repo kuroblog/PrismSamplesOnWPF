@@ -4,8 +4,10 @@ namespace Prism.Ex.App.Modules.Demo
     using Prism.Commands;
     using Prism.Events;
     using Prism.Ex.App.Common;
+    using Prism.Ex.App.Logger;
     using Prism.Mvvm;
     using Prism.Regions;
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
 
@@ -63,9 +65,32 @@ namespace Prism.Ex.App.Modules.Demo
                         ea?.BusyIndicatorStateEventPublish(false);
                     });
                     break;
+                case "TestLog":
+                    TestLog();
+                    break;
+                case "ErrorLog":
+                    ErrorLog();
+                    break;
                 default:
                     break;
             }
         });
+
+        private void TestLog()
+        {
+            NLogWrapper.Instance.Trace(new { key = Guid.NewGuid().ToString("N"), message = "this is a test message." });
+        }
+
+        private void ErrorLog()
+        {
+            try
+            {
+                throw new ArgumentException("test error.");
+            }
+            catch (Exception ex)
+            {
+                NLogWrapper.Instance.Error(ex);
+            }
+        }
     }
 }
