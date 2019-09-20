@@ -1,6 +1,7 @@
 ﻿
 namespace Prism.Ex.App.Logger
 {
+    using Newtonsoft.Json;
     using System;
     using System.Threading.Tasks;
 
@@ -14,14 +15,16 @@ namespace Prism.Ex.App.Logger
 
         protected virtual NLog.Logger Logger => NLog.LogManager.GetCurrentClassLogger();
 
-        public virtual async void Trace<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Trace(data));
+        protected virtual string GetJsonString<TData>(TData data) => JsonConvert.SerializeObject(data);
 
-        public virtual async void Debug<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Debug(data));
+        public virtual async void Trace<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Trace(GetJsonString(data)));
 
-        public virtual async void Info<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Info(data));
+        public virtual async void Debug<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Debug(GetJsonString(data)));
 
-        public virtual async void Error<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Error(data));
+        public virtual async void Info<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Info(GetJsonString(data)));
 
-        public virtual async void Fatal<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Fatal(data));
+        public virtual async void Error<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Error(GetJsonString(data)));
+
+        public virtual async void Fatal<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Fatal(GetJsonString(data)));
     }
 }

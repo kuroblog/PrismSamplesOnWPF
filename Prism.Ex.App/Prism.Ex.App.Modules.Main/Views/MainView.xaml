@@ -10,12 +10,14 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:com="clr-namespace:Prism.Ex.App.Common;assembly=Prism.Ex.App.Common"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"             
+             xmlns:res="clr-namespace:Prism.Ex.App.Asset;assembly=Prism.Ex.App.Asset">
 
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Styles/BusyIndicator.xaml"/>
+                <ResourceDictionary Source="/Prism.Ex.App.Asset;component/Languages/zh-CN.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary></UserControl.Resources>
 
@@ -25,7 +27,11 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
-    <xctk:BusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" Style="{StaticResource MainBusyIndicatorStyle}">
+    <i:Interaction.Behaviors>
+        <res:CleanLanguageForDesignTimeBehavior/>
+    </i:Interaction.Behaviors>
+
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" Style="{StaticResource MainBusyIndicatorStyle}" BusyContent="{DynamicResource WaitingLabel}">
         <Border>
             <ContentControl prism:RegionManager.RegionName="{x:Static com:RegionNames.Home}"
                             VerticalContentAlignment="Stretch"

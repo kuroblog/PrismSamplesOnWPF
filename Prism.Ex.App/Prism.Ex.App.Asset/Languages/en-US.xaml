@@ -4,4 +4,5 @@
 
     <ms:String x:Key="TestView">Test View</ms:String>
     <ms:String x:Key="DefaultView">Default View</ms:String>
+    <ms:String x:Key="WaitingLabel">Please waiting ...</ms:String>
 </ResourceDictionary>

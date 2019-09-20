@@ -5,6 +5,7 @@
     
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Fonts.xaml"/>
+        <!--<ResourceDictionary Source="/Prism.Ex.App.Asset;component/Languages/zh-CN.xaml"/>-->
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="xctk:BusyIndicator" x:Key="BaseBusyIndicatorStyle">
@@ -13,7 +14,7 @@
     </Style>
 
     <Style TargetType="xctk:BusyIndicator" BasedOn="{StaticResource BaseBusyIndicatorStyle}" x:Key="MainBusyIndicatorStyle">
-        <Setter Property="BusyContent" Value="请稍候"/>
+        <!--<Setter Property="BusyContent" Value="{DynamicResource WaitingLabel}"/>-->
         <Setter Property="OverlayStyle">
             <Setter.Value>
                 <Style TargetType="Rectangle">
