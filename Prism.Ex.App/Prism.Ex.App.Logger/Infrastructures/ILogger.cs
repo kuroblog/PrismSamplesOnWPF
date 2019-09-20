@@ -1,16 +1,18 @@
 ﻿
 namespace Prism.Ex.App.Logger
 {
+    using System.Threading.Tasks;
+
     public interface ILogger
     {
-        void Trace<TData>(TData data);
+        Task Trace<TData>(TData data);
 
-        void Debug<TData>(TData data);
+        Task Debug<TData>(TData data);
 
-        void Info<TData>(TData data);
+        Task Info<TData>(TData data);
 
-        void Error<TData>(TData data);
+        Task Error<TData>(TData data);
 
-        void Fatal<TData>(TData data);
+        Task Fatal<TData>(TData data);
     }
 }

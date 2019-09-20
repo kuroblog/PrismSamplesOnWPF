@@ -7,15 +7,15 @@ namespace Prism.Ex.App.Logger
 
     public class NLogger : ILogger
     {
-        public void Trace<TData>(TData data) => NLogWrapper.Instance.Trace(data);
+        public async Task Trace<TData>(TData data) => await NLogWrapper.Instance.Trace(data);
 
-        public void Debug<TData>(TData data) => NLogWrapper.Instance.Debug(data);
+        public async Task Debug<TData>(TData data) => await NLogWrapper.Instance.Debug(data);
 
-        public void Info<TData>(TData data) => NLogWrapper.Instance.Info(data);
+        public async Task Info<TData>(TData data) => await NLogWrapper.Instance.Info(data);
 
-        public void Error<TData>(TData data) => NLogWrapper.Instance.Error(data);
+        public async Task Error<TData>(TData data) => await NLogWrapper.Instance.Error(data);
 
-        public void Fatal<TData>(TData data) => NLogWrapper.Instance.Fatal(data);
+        public async Task Fatal<TData>(TData data) => await NLogWrapper.Instance.Fatal(data);
     }
 
     public class NLogWrapper
@@ -30,14 +30,14 @@ namespace Prism.Ex.App.Logger
 
         protected virtual string GetJsonString<TData>(TData data) => JsonConvert.SerializeObject(data);
 
-        public virtual async void Trace<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Trace(GetJsonString(data)));
+        public virtual async Task Trace<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Trace(GetJsonString(data)));
 
-        public virtual async void Debug<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Debug(GetJsonString(data)));
+        public virtual async Task Debug<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Debug(GetJsonString(data)));
 
-        public virtual async void Info<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Info(GetJsonString(data)));
+        public virtual async Task Info<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Info(GetJsonString(data)));
 
-        public virtual async void Error<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Error(GetJsonString(data)));
+        public virtual async Task Error<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Error(GetJsonString(data)));
 
-        public virtual async void Fatal<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Fatal(GetJsonString(data)));
+        public virtual async Task Fatal<TData>(TData data) => await Task.Factory.StartNew(() => Logger.Fatal(GetJsonString(data)));
     }
 }
