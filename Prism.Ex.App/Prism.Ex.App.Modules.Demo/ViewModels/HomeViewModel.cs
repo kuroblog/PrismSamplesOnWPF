@@ -19,12 +19,14 @@ namespace Prism.Ex.App.Modules.Demo
         private readonly DemoConfig config;
         private readonly IRegionManager region;
         private readonly IEventAggregator ea;
+        private readonly ILogger logger;
 
-        public HomeViewModel(DemoConfig config, IRegionManager region, IEventAggregator ea)
+        public HomeViewModel(DemoConfig config, IRegionManager region, IEventAggregator ea, ILogger logger)
         {
             this.config = config;
             this.region = region;
             this.ea = ea;
+            this.logger = logger;
         }
 
         public string Version => config.ModuleVersion;
@@ -78,7 +80,7 @@ namespace Prism.Ex.App.Modules.Demo
 
         private void TestLog()
         {
-            NLogWrapper.Instance.Trace(new { key = Guid.NewGuid().ToString("N"), message = "this is a test message." });
+            logger.Trace(new { key = Guid.NewGuid().ToString("N"), message = "this is a test message." });
         }
 
         private void ErrorLog()
@@ -89,7 +91,7 @@ namespace Prism.Ex.App.Modules.Demo
             }
             catch (Exception ex)
             {
-                NLogWrapper.Instance.Error(ex);
+                logger.Error(ex);
             }
         }
     }

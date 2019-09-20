@@ -40,6 +40,7 @@ namespace Prism.Ex.App.Shell
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<ShellConfig>();
+            containerRegistry.RegisterSingleton<Logger.ILogger, Logger.NLogger>();
         }
 
         private Action<object> WriteLog = (obj) => Console.WriteLine(obj);

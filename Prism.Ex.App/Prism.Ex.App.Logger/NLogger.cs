@@ -5,6 +5,19 @@ namespace Prism.Ex.App.Logger
     using System;
     using System.Threading.Tasks;
 
+    public class NLogger : ILogger
+    {
+        public void Trace<TData>(TData data) => NLogWrapper.Instance.Trace(data);
+
+        public void Debug<TData>(TData data) => NLogWrapper.Instance.Debug(data);
+
+        public void Info<TData>(TData data) => NLogWrapper.Instance.Info(data);
+
+        public void Error<TData>(TData data) => NLogWrapper.Instance.Error(data);
+
+        public void Fatal<TData>(TData data) => NLogWrapper.Instance.Fatal(data);
+    }
+
     public class NLogWrapper
     {
         private NLogWrapper() { }
